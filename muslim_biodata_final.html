@@ -9,6 +9,59 @@
 <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
 <style>
+  /* ✅ MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
+
+  /* Make all grids single column */
+  .fgrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fg3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix spacing */
+  .main {
+    padding: 1rem 0.6rem;
+  }
+
+  .fbody {
+    padding: 0.8rem;
+  }
+
+  .form-wrap {
+    max-width: 100%;
+  }
+
+  /* Prevent cutting / overflow */
+  .fgroup input,
+  .fgroup select,
+  .fgroup textarea {
+    width: 100%;
+  }
+
+  /* Fix navbar buttons wrapping */
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav button {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ✅ GLOBAL OVERFLOW FIX (CRITICAL) */
+body {
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100%;
+  overflow-x: hidden;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--accent:#c9a84c;--accent2:#e8d5a3;--dark:#2c1204;--mid:#8a6a2a;--light:#f5f0e8;--white:#faf6ef;--border:#d4b896}
 body{font-family:'EB Garamond',serif;background:var(--light);min-height:100vh;font-size:15px;color:var(--dark)}
@@ -88,7 +141,16 @@ nav button.active{border-bottom:3px solid var(--accent)}
 .badge-req{background:rgba(255,100,80,0.25);color:#ffe0dc;border:1px solid rgba(255,100,80,0.4)}
 .badge-opt{background:rgba(255,255,255,0.15);color:#e8d5a3;border:1px solid rgba(255,255,255,0.25)}
 .fbody{padding:1rem 1.2rem}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.fgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .fgrid {
+    grid-template-columns: 1fr;
+  }
+}
 .fg3{grid-template-columns:1fr 1fr 1fr}
 .fgroup{display:flex;flex-direction:column;gap:0.2rem}
 .fgroup.full{grid-column:1/-1}
